@@ -17,21 +17,21 @@
 			height: 18px;
 		}
 
-		#cell01, #cell02, #cell03 {
+		#cell00, #cell01, #cell02 {
 			display: table-cell;
 			width: 20px;
 			height: 20px;
 			border: 1px solid black;
 		}
 
-		#cell11, #cell12, #cell13 {
+		#cell10, #cell11, #cell12 {
 			display: table-cell;
 			width: 20px;
 			height: 20px;
 			border: 1px solid black;
 		}
 
-		#cell21, #cell22, #cell23 {
+		#cell20, #cell21, #cell22 {
 			display: table-cell;
 			width: 20px;
 			height: 20px;
@@ -48,19 +48,19 @@
 	<h1> Let's Play Tic Tac Toe </h1>
 		<div class="board">
 			<div class="row">
+				<div onclick="move(0,0)" id="cell00"></div>
 				<div onclick="move(0,1)" id="cell01"></div>
 				<div onclick="move(0,2)" id="cell02"></div>
-				<div onclick="move(0,3)" id="cell03"></div>
 			</div>
 			<div class="row">
+				<div onclick="move(1,0)" id="cell10"></div>
 				<div onclick="move(1,1)" id="cell11"></div>
 				<div onclick="move(1,2)" id="cell12"></div>
-				<div onclick="move(1,3)" id="cell13"></div>
 			</div>
 			<div class="row">
+				<div onclick="move(2,0)" id="cell20"></div>
 				<div onclick="move(2,1)" id="cell21"></div>
 				<div onclick="move(2,2)" id="cell22"></div>
-				<div onclick="move(2,3)" id="cell23"></div>
 			</div>
 		</div>
 		<div id= 'results'></div>
