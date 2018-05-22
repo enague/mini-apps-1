@@ -3,6 +3,7 @@
 <head>
 	<title>Tic Tac Toe</title>
 	<script type="text/javascript" src='./app.js'></script>
+	<link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Pacifico" rel="stylesheet">
 </head>
 	<style>
 		body {
@@ -15,10 +16,20 @@
 			cursor: pointer;
 		}
 
+		.title {
+			text-align: center;
+			font-family: 'Pacifico', cursive;
+			font-size: 50px;
+		}
+
+		.currentPlayer {
+			margin-bottom: 30px;
+		}
+
 		.board {
 			display: table;
-			width: 100px;
-			height: 100px;
+			width: 250px;
+			height: 250px;
 			border: 1px solid black;
 			float: right;
 		}
@@ -30,39 +41,44 @@
 
 		#cell00, #cell01, #cell02 {
 			display: table-cell;
-			width: 20px;
-			height: 20px;
+			width: 33%;
+			height: 33%;
 			border: 1px solid black;
 			background: white;
 			cursor: pointer;
+			font-size: 50px;
+			font-family: 'Baloo Chettan', cursive;
+
+
 		}
 
 		#cell10, #cell11, #cell12 {
 			display: table-cell;
-			width: 20px;
-			height: 20px;
+			width: 33%;
+			height: 33%;
 			border: 1px solid black;
 			background: white;
 			cursor: pointer;
+			font-size: 50px;
+			font-family: 'Baloo Chettan', cursive;
+
 		}
 
 		#cell20, #cell21, #cell22 {
 			display: table-cell;
-			width: 20px;
-			height: 20px;
+			width: 33%;
+			height: 33%;
 			border: 1px solid black;
 			background: white;
 			cursor: pointer;
+			font-size: 50px;
+			font-family: 'Baloo Chettan', cursive;
+
 		}
 
-		.result{
-			font-size: 20px;
-			font-weight: bold;
-			float: right;
-		}
 	</style>
 <body>
-	<h1 style="text-align: center"> Let's Play Tic Tac Toe </h1>
+	<h1 class="title"> Let's Play Tic Tac Toe!</h1>
 		<div class="board">
 			<div class="row">
 				<div onclick="move(0,0)" id="cell00"></div>
@@ -80,10 +96,13 @@
 				<div onclick="move(2,2)" id="cell22"></div>
 			</div>
 		</div>
-		<div id= 'results'></div>
+		<div style="font-size: 20px; font-weight: bold; color: orange;" id= 'results'></div>
 	<div>
 	<h3> Current Player's Move: </h3>
-	<div id='currentPlayer'>Player X</div>
+	<div style="margin-bottom: 20px;" id='currentPlayer'>Player X</div>
+	<div >Score:</div>
+	<div id="xscore">Player X:</div>
+	<div id="oscore">Player O:</div>
 	<button onclick= "newGame()""> Play a New Game?</button>
 	</div>
 </body>
