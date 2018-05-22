@@ -29,12 +29,18 @@ var checkWinnerAcross = function() {
 }
 
 // Check to see if there is a winner across
-var checkWinnerDown =function() {
-	for(var i = 0; i < board.length; i++) {
-		var row = board[i];
-
-	}
-}
+// var checkWinnerDown =function() {
+// 	for(var i = 0; i < board.length; i++) {
+// 		var row = board[i];
+// 		for(var j = 0; j < row.length; j++) {
+// 			if(row[i] === row++[i] && row++[i] === row++++[i]) {
+// 				return true;
+// 			} else {
+// 				return false;
+// 			}
+// 		}
+// 	}
+// }
 
 //Check to see if there is a winner in a major diagonal
 var checkWinnerMajorDiagonal = function() {
@@ -59,7 +65,6 @@ var move= function(row,column) {
 	console.log(row,column);
 
 	if(game.currentPlayer) {
-		document.getElementById('currentPlayer').innerHTML = "Player O"
 		document.getElementById(`cell${row}${column}`).innerHTML= "X"
 		game.moves++;
 		board[row][column] = 1;
@@ -68,8 +73,8 @@ var move= function(row,column) {
 			document.getElementById('results').innerHTML = 'Player X is the WINNER!'
 		}
 		game.currentPlayer=false;
+		document.getElementById('currentPlayer').innerHTML = "Player O"
 	} else {
-		document.getElementById('currentPlayer').innerHTML = "Player X"
 		document.getElementById(`cell${row}${column}`).innerHTML= 'O'
 		game.moves++;
 		board[row][column] = 2;
@@ -78,10 +83,11 @@ var move= function(row,column) {
 			document.getElementById('results').innerHTML = 'Player O is the WINNER!'
 		}
 		game.currentPlayer= true;
+		document.getElementById('currentPlayer').innerHTML = "Player X"
 	}
 
 	if(game.moves === 9) {
-		document.getElementById('results').innerHTML = 'We Have a Tie'
+		document.getElementById('results').innerHTML = 'We Have a Tie!'
 	}
 }
 

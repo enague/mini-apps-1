@@ -5,14 +5,24 @@
 	<script type="text/javascript" src='./app.js'></script>
 </head>
 	<style>
+		body {
+			background: aliceblue;
+
+		}
 	
-		
+		button {
+			margin-top: 20px;
+			cursor: pointer;
+		}
+
 		.board {
 			display: table;
 			width: 100px;
 			height: 100px;
 			border: 1px solid black;
+			float: right;
 		}
+
 		.row {
 			display: table-row;
 			height: 18px;
@@ -23,6 +33,8 @@
 			width: 20px;
 			height: 20px;
 			border: 1px solid black;
+			background: white;
+			cursor: pointer;
 		}
 
 		#cell10, #cell11, #cell12 {
@@ -30,6 +42,8 @@
 			width: 20px;
 			height: 20px;
 			border: 1px solid black;
+			background: white;
+			cursor: pointer;
 		}
 
 		#cell20, #cell21, #cell22 {
@@ -37,6 +51,8 @@
 			width: 20px;
 			height: 20px;
 			border: 1px solid black;
+			background: white;
+			cursor: pointer;
 		}
 
 		.result{
@@ -46,7 +62,7 @@
 		}
 	</style>
 <body>
-	<h1> Let's Play Tic Tac Toe </h1>
+	<h1 style="text-align: center"> Let's Play Tic Tac Toe </h1>
 		<div class="board">
 			<div class="row">
 				<div onclick="move(0,0)" id="cell00"></div>
