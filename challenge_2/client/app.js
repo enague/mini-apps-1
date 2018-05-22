@@ -17,7 +17,7 @@ $(document).ready(function() {
 			contentType: "application/json",
 			success: function(data) {
 				console.log('enters success')
-				//$("#output").append("<p>test</p>")
+				$("#output").append(`<p>${data}</p>`)
 			},
 			error: function(err) {
 				console.log('Error occurred', err)

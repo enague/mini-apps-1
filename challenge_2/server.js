@@ -13,7 +13,13 @@ app.post('/csv', function(req, res) {
 
 	//convert req.body to csv
 	//res.end with csv
-	res.end(console.log('end of response'));
+	var makeIntoCSV = function(body) {
+		
+	}
+
+	makeIntoCSV(req.body);
+
+	res.end(JSON.stringify(req.body));
 })
 
 app.listen(3000, ()=> console.log('listening to port 3000'));
