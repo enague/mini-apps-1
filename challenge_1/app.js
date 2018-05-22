@@ -8,7 +8,7 @@ var game = {
 
 var board = [[3,4,5],
 			 [6,7,8],
-			 [3,4,5]]
+			 [9,10,11]]
 
 //Reload a new game
 var newGame = function() {
@@ -100,7 +100,7 @@ var move= function(row,column) {
 		document.getElementById('currentPlayer').innerHTML = "Player X"
 	}
 
-	if(game.moves === 9) {
+	if(!checkWinnerAcross() && !checkWinnerMajorDiagonal() && !checkWinnerMajorDiagonal() && !checkWinnerDown() && game.moves === 9) {
 		document.getElementById('results').innerHTML = 'We Have a Tie!'
 	}
 }
