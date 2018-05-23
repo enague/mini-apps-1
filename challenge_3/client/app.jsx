@@ -81,7 +81,7 @@ class App extends React.Component {
 				{this.state.showF1 ? <F1 showF2={this.showF2.bind(this)} /> : null}
 				{this.state.showF2 ? <F2 showF3={this.showF3.bind(this)} /> : null}
 				{this.state.showF3 ? <F3 showConfirmation={this.confirmation.bind(this)}/> : null}
-				{this.state.confirmation ? <Confirmation /> : null}
+				{this.state.confirmation ? <Confirmation details={this.state}/> : null}
 				<button onClick={() => {this.showF1()}} >Checkout</button>
 			</div>
 		)
@@ -145,6 +145,33 @@ var F3 = (props) => (
 var Confirmation =(props) => (
 	<div>
 	<p> Please review all the data collected! When you are done, click the <b> Purchase </b> button.</p>
+		<form>
+			Name:<br></br>
+			{props.details.name}<br></br>
+			Email:<br></br>
+			{props.details.email}<br></br>
+			Password:<br></br>
+			{props.details.password}<br></br>
+			Adress:<br></br>
+			{props.details.line1}<br></br>
+			{props.details.line2}<br></br>
+			City:<br></br>
+			{props.details.city}<br></br>
+			State:<br></br>
+			{props.details.state}<br></br>
+			Zip Code:<br></br>
+			{props.details.zip}<br></br>
+			Phone:<br></br>
+			{props.details.phone}<br></br>
+			CC:<br></br>
+			{props.details.cc}<br></br>
+			Expiry Date:<br></br>
+			{props.details.expiry}<br></br>
+			CVV:<br></br>
+			{props.details.cvv}<br></br>
+			Billing Zip Code:<br></br>
+			{props.details.billingZip}<br></br>
+		</form>
 	<button onClick={() => {window.location.reload()}}>Purchase</button>
 	</div>
 )
