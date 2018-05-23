@@ -6,6 +6,7 @@ class App extends React.Component {
 			showF2: false,
 			showF3: false,
 			confirmation: false,
+			checkout: true,
 			name: null,
 			email: null,
 			password: null,
@@ -24,7 +25,8 @@ class App extends React.Component {
 	
 		showF1() {
 			this.setState({
-				showF1: true
+				showF1: true,
+				checkout: false
 			})
 		}	
 
@@ -36,7 +38,8 @@ class App extends React.Component {
 				showF2: true,
 				name: name,
 				email: email,
-				password: password
+				password: password,
+				showF1: false
 			})
 		}	
 
@@ -54,7 +57,8 @@ class App extends React.Component {
 				city: city,
 				state: state,
 				zip: zip,
-				phone: phone
+				phone: phone,
+				showF2:false
 			})
 		}	
 
@@ -68,7 +72,8 @@ class App extends React.Component {
 				cc: cc,
 				expiry: expiry,
 				cvv: cvv,
-				billingZip: billingZip
+				billingZip: billingZip,
+				showF3: false
 			})
 		}	
 
@@ -82,7 +87,7 @@ class App extends React.Component {
 				{this.state.showF2 ? <F2 showF3={this.showF3.bind(this)} /> : null}
 				{this.state.showF3 ? <F3 showConfirmation={this.confirmation.bind(this)}/> : null}
 				{this.state.confirmation ? <Confirmation details={this.state}/> : null}
-				<button onClick={() => {this.showF1()}} >Checkout</button>
+				{this.state.checkout ? <button onClick={() => {this.showF1()}} >Checkout</button> : null} 
 			</div>
 		)
 	}
@@ -152,7 +157,7 @@ var Confirmation =(props) => (
 			{props.details.email}<br></br>
 			Password:<br></br>
 			{props.details.password}<br></br>
-			Adress:<br></br>
+			Address:<br></br>
 			{props.details.line1}<br></br>
 			{props.details.line2}<br></br>
 			City:<br></br>
