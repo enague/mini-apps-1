@@ -17,7 +17,11 @@ $(document).ready(function() {
 			contentType: "application/json",
 			success: function(data) {
 				console.log('enters success')
-				$("#output").append(`<p>${data}</p>`)
+				var splitData= data.split('\n')
+				console.log(splitData)
+				for(var i = 0; i < splitData.length; i++) {
+					$("#output").append(`<div>${splitData[i]}</div>`)
+				}
 			},
 			error: function(err) {
 				console.log('Error occurred', err)
