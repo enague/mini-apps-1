@@ -11,25 +11,15 @@
 		background: #42d1f4;
 	}
 
-</style>
-<script type="text/javascript">
-
-var show = false;
-
-//function to show app
-var showApp = function() {
-	console.log('hi')
-	if(show){
-		show= false;
-	} else {
-		show = true;
+	#title {
+		font-size: 30px;
+		font-weight: bold;
+		margin-bottom: 30px;
 	}
-}	
 
-</script>
+</style>
 <body>
-	<h1> Multistep Checkout Express </h1>
-	<button onclick="showApp()">Checkout</button>
+	<div id="title"> Multistep Checkout Express </div>
 	<div id='app'></div>
 	<script  src="app.js"></script>
 </body>

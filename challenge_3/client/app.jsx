@@ -1,28 +1,51 @@
 class App extends React.Component {
 	constructor(props) {
 		super(props);
-		// this.state= {
-
-		// }
+		this.state= {
+			showF1: false,
+			showF2: false,
+			showF3: false
+		}
 	}
+	
+		showF1() {
+			this.setState({
+				showF1: true
+			})
+		}	
+
+		showF2() {
+			this.setState({
+				showF2: true
+			})
+		}	
+
+		showF3() {
+			this.setState({
+				showF3: true
+			})
+		}	
 
 	//TODO: function for next button
+		//Next for F1
+		//Next for F2 
 	//TODO: function for purchase button
 
 	render() {
 
 		return (
 			<div>
-				<F1 />
-				<F2 />
-				<F3 />
+				{this.state.showF1 ? <F1 showF2={this.showF2.bind(this)} /> : null}
+				{this.state.showF2 ? <F2 showF3={this.showF3.bind(this)} /> : null}
+				{this.state.showF3 ? <F3 /> : null}
+				<button onClick={() => {this.showF1()}} >Checkout</button>
 			</div>
 		)
 	}
 }
 
 
-var F1 = () => (
+var F1 = (props) => (
 	<div>
 		<p>Please fill out your name, email, and password. Then, hit the <b>Next</b> button</p>
 		<form>
@@ -33,11 +56,11 @@ var F1 = () => (
 			Password:<br></br>
 			<input type="text" name="password"></input><br></br>
 		</form>
-		<button>Next</button>
+		<button onClick={() => {props.showF2()}}>Next</button>
 	</div>
 );
 
-var F2 =() => (
+var F2 =(props) => (
 	<div>
 		<p>Please fill out your address and phone number. Then, hit the <b>Next</b> button</p>
 		<form>
@@ -54,11 +77,11 @@ var F2 =() => (
 			Phone Number:<br></br>
 			<input type="text" name="phone"></input><br></br>
 		</form>
-		<button>Next</button>
+		<button onClick={() => {props.showF3()}}>Next</button>
 	</div>
 );
 
-var F3 = () => (
+var F3 = (props) => (
 	<div>
 	<p>Please fill out your credit card #, expiry date, CVV, and billing zip code. Then, hit the <b>Purchase</b> button</p>
 	<form>
