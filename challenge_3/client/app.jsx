@@ -41,6 +41,26 @@ class App extends React.Component {
 				password: password,
 				showF1: false
 			})
+
+			var data= {
+				name: name,
+				email: email,
+				password: password
+			}
+
+			//ajax post request to server
+			$.ajax({
+				type: "POST",
+				url: '/',
+				data: data,
+				//contentType:'application/json',
+				success: function(data) {
+					console.log('enters success', data)
+				},
+				error: function(error) {
+					console.log('Error occurred', error)
+				}
+			})
 		}	
 
 		showF3() {
@@ -60,6 +80,8 @@ class App extends React.Component {
 				phone: phone,
 				showF2:false
 			})
+
+			//ajax post request to server
 		}	
 
 		confirmation() {
@@ -75,6 +97,8 @@ class App extends React.Component {
 				billingZip: billingZip,
 				showF3: false
 			})
+
+			//ajax post request to server
 		}	
 
 
