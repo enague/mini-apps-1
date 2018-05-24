@@ -19,7 +19,8 @@ class App extends React.Component {
 			cc: null,
 			expiry: null,
 			cvv: null,
-			billingZip: null
+			billingZip: null,
+			id: ''
 		}
 	}
 	
@@ -53,11 +54,13 @@ class App extends React.Component {
 				type: "POST",
 				url: '/',
 				data: data,
-				//contentType:'application/json',
-				success: function(data) {
-					console.log('enters success', data)
+				success: (data) => {
+					console.log('enters success', data),
+					this.setState({
+						id: data
+					})
 				},
-				error: function(error) {
+				error: (error) => {
 					console.log('Error occurred', error)
 				}
 			})
@@ -81,7 +84,27 @@ class App extends React.Component {
 				showF2:false
 			})
 
+			var data= {
+				line1: line1,
+				line2: line2,
+				city: city,
+				state: state,
+				zip: zip,
+				phone: phone,
+			}
+
 			//ajax post request to server
+			$.ajax({
+				type: "POST",
+				url: '/',
+				data: data,
+				success: function(data) {
+					console.log('enters success', data)
+				},
+				error: function(error) {
+					console.log('Error occurred', error)
+				}
+			})
 		}	
 
 		confirmation() {
@@ -98,7 +121,25 @@ class App extends React.Component {
 				showF3: false
 			})
 
+			var data= {
+				cc: cc,
+				expiry: expiry,
+				cvv: cvv,
+				billingZip: billingZip,
+			}
+
 			//ajax post request to server
+			$.ajax({
+				type: "POST",
+				url: '/',
+				data: data,
+				success: function(data) {
+					console.log('enters success', data)
+				},
+				error: function(error) {
+					console.log('Error occurred', error)
+				}
+			})
 		}	
 
 
